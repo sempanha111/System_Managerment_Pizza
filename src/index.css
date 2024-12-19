@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: #0f1725;
+}
+
+.text-gradient {
+  display: inline-block;
+  background: -webkit-linear-gradient(45deg, #c026d3, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 95%;
+  }
+}
+.animate-hanging {
+  display: inline-block;
+  animation: hang 6s ease-in-out infinite alternate; /* Smooth easing and infinite loop */
+}
+
+/* Card Hanging Animation */
+@keyframes hang {
+  0% {
+    transform:  rotate(0deg); /* Initial position */
+    transform-origin: top center; /* Rotation from the top */
+  }
+  25%{
+    transform:  rotate(2deg); /* Rotate 10 degrees */
+    transform-origin: top center; /* Keep rotation from the top */
+  }
+
+  75%{
+    transform:  rotate(-2deg); /* Rotate 10 degrees */
+    transform-origin: top center; /* Keep rotation from the top */
+  }
+  100% {
+    transform:  rotate(0deg); /* Back to original */
+    transform-origin: top center; /* Keep rotation from the top */
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+      transform: rotate(-3deg);
+  }
+  50% {
+      transform: rotate(3deg);
+  }
+}
+.wiggle {
+  animation: wiggle 0.4s infinite;
+}
+
+@keyframes boxShake {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-2px);
+  }
+  75% {
+      transform: translateX(2px);
+  }
+}
+
+@keyframes boxScale {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.02);
+  }
+}
+
+.box-animate-shake {
+  animation: boxShake 0.4s infinite;
+}
+
+.box-animate-scale {
+  animation: boxScale 0.4s infinite;
+}
+
+/* Scale and rotate icon */
+@keyframes iconInteractive {
+  0% {
+      transform: scale(1) rotate(0deg);
+  }
+  50% {
+      transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+      transform: scale(1) rotate(0deg);
+  }
+}
+
+.icon-animate {
+  animation: iconInteractive 0.5s ease-in-out;
+}
+
+/* Fade-in or color-change animation */
+@keyframes fadeBackground {
+  0% {
+      background-color: rgba(255, 255, 255, 0);
+  }
+  100% {
+      background-color: rgba(255, 0, 0, 0.1); /* Red tint */
+  }
+}
+
+.animate-fade {
+  animation: fadeBackground 0.5s ease-in-out;
+}
+/* Subtle bounce on click */
+@keyframes subtleBounce {
+  0% {
+      transform: scale(1);
+      rotate: 0deg;
+  }
+  50% {
+      transform: scale(1.02);
+      rotate: 1deg;
+  }
+  100% {
+      transform: scale(1);
+      rotate: 0deg;
+  }
+}
+
+.animate-bounce {
+  animation: subtleBounce 2s ease-out infinite;
+}
+
+.spinner {
+  display: inline-block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+}
+
+.spinner span {
+  display: block;
+  transform-origin: 32px 32px;
+  animation: spin 1.2s linear infinite;
+}
+
+.spinner span:after {
+  border-radius: 20%;
+  background-color: #000;
+  content: " ";
+  display: block;
+  height: 14px;
+  width: 5px;
+  position: absolute;
+  left: 30px;
+  top: 5px;
+}
+
+.spinner span:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+
+.spinner span:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+
+.spinner span:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+
+.spinner span:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+
+.spinner span:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+
+.spinner span:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+
+.spinner span:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+
+.spinner span:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+
+.spinner span:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+
+.spinner span:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+
+.spinner span:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+
+.spinner span:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+
+@keyframes spin {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.05s ease-in-out;
+}
